@@ -16,11 +16,22 @@ public class UserServiceImpl implements UserService {
     public String QueryUser(String account) {
         if(StringUtils.hasLength(account)){
             User user = userDao.queryUser(account);
-            return user.toString();
+            if(StringUtils.hasLength(user.toString())){
+                return user.toString();
+            }
+            else {
+                return "没有此用户";
+            }
+
         }
         else {
             return "账号错误";
         }
+
+    }
+
+    @Override
+    public void saveUser(User user) {
 
     }
 }

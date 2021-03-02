@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 
 public class User {
     private String userName;
-    private String password;
+    private String userPassword;
     private Number phone;
     private String address;
     private Timestamp date;
@@ -20,11 +20,11 @@ public class User {
     }
 
     public String getPassword() {
-        return password;
+        return userPassword;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.userPassword = password;
     }
 
     public Number getPhone() {
@@ -55,7 +55,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
+                ", password='" + userPassword + '\'' +
                 ", phone=" + phone +
                 ", address='" + address + '\'' +
                 ", date=" + date +
