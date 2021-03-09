@@ -6,4 +6,20 @@
     select * from user
     where userName=#{account}
 </select>
+    <insert id="saveUser" parameterType="User">
+        insert into
+        user
+        (userName,
+        userPassword,
+        phone,
+        address,
+        date
+        )
+        values
+        (#{user.userName},
+        #{user.password},
+        #{user.phone},
+        #{user.address},
+        #{user.date})
+    </insert>
 </mapper>

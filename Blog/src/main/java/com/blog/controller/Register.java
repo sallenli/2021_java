@@ -36,20 +36,20 @@ public class Register {
     @PostMapping("/saveUser")
     public String saveUser(@RequestBody User user){
         if(StringUtils.hasLength(user.getUserName())&&StringUtils.hasLength(user.getPassword())){
-            String userName = userService.QueryUser(user.getUserName());
-            if(StringUtils.hasLength(userName)){
-                return "用户名重复，请重新输入";
-            }
-            else {
+          //  String userName = userService.QueryUser(user.getUserName());
+           // if(StringUtils.hasLength(userName)){
+               // return "用户名重复，请重新输入";
+           // }
+           // else {
                 try {
-                    userService.saveUser(user);
-                    return "用户注册成功";
+                   return userService.saveUser(user);
+
                 } catch (Exception e) {
                     e.printStackTrace();
                     return  "用户注册失败";
                 }
             }
-        }
+      //  }
         else {
             return "缺少用户名/密码";
         }
