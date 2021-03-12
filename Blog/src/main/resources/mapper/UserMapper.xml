@@ -6,9 +6,9 @@
     select * from user
     where userName=#{account}
 </select>
-    <insert id="saveUser" parameterType="User">
+    <insert id="saveUser" parameterType="com.blog.entity.User">
         insert into
-        user
+        User
         (userName,
         userPassword,
         phone,
@@ -17,7 +17,7 @@
         )
         values
         (#{user.userName},
-        #{user.password},
+        #{user.userPassword},
         #{user.phone},
         #{user.address},
         #{user.date})

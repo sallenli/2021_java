@@ -6,4 +6,20 @@
     select * from user
     where userName=#{account}
 </select>
+    <insert id="saveUser" parameterType="com.blog.entity.User">
+        insert into
+        User
+        (userName,
+        userPassword,
+        phone,
+        address,
+        date
+        )
+        values
+        (#{user.userName},
+        #{user.userPassword},
+        #{user.phone},
+        #{user.address},
+        #{user.date})
+    </insert>
 </mapper>

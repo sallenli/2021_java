@@ -1,15 +1,20 @@
 package com.blog.entity;
 
+import lombok.Data;
+
 import java.sql.Timestamp;
 
 
-
+@Data
 public class User {
     private String userName;
     private String userPassword;
     private Number phone;
     private String address;
     private Timestamp date;
+
+    public User() {
+    }
 
     public String getUserName() {
         return userName;
@@ -23,8 +28,8 @@ public class User {
         return userPassword;
     }
 
-    public void setPassword(String password) {
-        this.userPassword = password;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 
     public Number getPhone() {
